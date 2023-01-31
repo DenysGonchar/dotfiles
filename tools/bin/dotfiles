@@ -1,4 +1,13 @@
 #!/bin/bash
-dotfiles_repo="$(realpath "$(dirname "$(readlink -f "$0")")/../..")"
+
+## the below settings are based on:
+##    http://redsymbol.net/articles/unofficial-bash-strict-mode/
+set -euo pipefail
+IFS=$'\n\t'
+
+dotfiles_tool="$(realpath "$0")"
+dotfiles_path="$(dirname "$dotfiles_tool")"
+dotfiles_repo="$(git -C "$dotfiles_path" rev-parse --show-toplevel)"
 echo "dotfiles repo - '${dotfiles_repo}'"
+
 git -C "${dotfiles_repo}" "$@"
