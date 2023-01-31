@@ -1,0 +1,4 @@
+#!/bin/bash
+dotfiles_repo="$(realpath "$(dirname "$(readlink -f "$0")")/../..")"
+echo "dotfiles repo - '${dotfiles_repo}'"
+git -C "${dotfiles_repo}" "$@"
