@@ -1,0 +1,5 @@
+[user]
+	name = Denys Gonchar
+	email = denys.gonchar@erlang-solutions.com
+[core]
+	excludesfile = ~/.gitignore_global
