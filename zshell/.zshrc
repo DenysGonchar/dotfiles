@@ -19,4 +19,10 @@ zstyle ':completion:*' menu false
 zstyle ':completion:*' insert-tab false
 zstyle ':completion:*' matcher-list '' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}'
 
+## key bindings
+bindkey "^[[5~" history-beginning-search-backward
+bindkey "^[[6~" history-beginning-search-forward
+bindkey "^[[H" beginning-of-line
+bindkey "^[[F" end-of-line
+
 
