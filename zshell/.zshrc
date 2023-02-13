@@ -11,4 +11,12 @@ prompt+="%{$fg[red]%}%n%{$reset_color%}@%{$fg[blue]%}%m%{$reset_color%} => "
 ## asdf-vm.com
 . /opt/homebrew/opt/asdf/libexec/asdf.sh
 
+## tab completion
+autoload -Uz compinit
+compinit
+
+zstyle ':completion:*' menu false
+zstyle ':completion:*' insert-tab false
+zstyle ':completion:*' matcher-list '' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}'
+
 
