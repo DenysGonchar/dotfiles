@@ -25,4 +25,11 @@ bindkey "^[[6~" history-beginning-search-forward
 bindkey "^[[H" beginning-of-line
 bindkey "^[[F" end-of-line
 
+## custom zshell options, use option names as in documentation:
+##     https://zsh.sourceforge.io/Doc/Release/Options.html
+setopt HIST_IGNORE_SPACE
+setopt HIST_IGNORE_ALL_DUPS
+setopt INTERACTIVE_COMMENTS
+setopt AUTO_CD
+
 
