@@ -3,3 +3,7 @@
 	email = denys.gonchar@erlang-solutions.com
 [core]
 	excludesfile = ~/.gitignore_global
+[difftool]
+	prompt = false
+[diff]
+	tool = meld
