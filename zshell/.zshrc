@@ -32,4 +32,6 @@ setopt HIST_IGNORE_ALL_DUPS
 setopt INTERACTIVE_COMMENTS
 setopt AUTO_CD
 
+## direnv hook
+eval "$(direnv hook zsh)"
 
