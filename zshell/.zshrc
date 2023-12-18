@@ -35,7 +35,10 @@ setopt AUTO_CD
 ## direnv hook
 eval "$(direnv hook zsh)"
 
-## set up autocomplete for kubectl, helm and logcli
+## autocompletion for various tools
+autoload -U bashcompinit && bashcompinit
+
 source <(kubectl completion zsh)
 source <(helm completion zsh)
-eval "$(logcli --completion-script-zsh)"
+eval "$(logcli --completion-script-zsh | grep -v compinit)"
+
