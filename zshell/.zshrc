@@ -11,10 +11,13 @@ prompt+="%{$fg[red]%}%n%{$reset_color%}@%{$fg[blue]%}%m%{$reset_color%} => "
 ## asdf-vm.com
 . /opt/homebrew/opt/asdf/libexec/asdf.sh
 
-## tab completion
+## autocompletion for various tools
+fpath+=("$(brew --prefix)/share/zsh/site-functions")
 autoload -Uz compinit
 compinit
+source <(kubectl completion zsh)
 
+## tab completion (note that compinit must be executed before these commands)
 zstyle ':completion:*' menu false
 zstyle ':completion:*' insert-tab false
 zstyle ':completion:*' matcher-list '' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}'
@@ -34,11 +37,4 @@ setopt AUTO_CD
 
 ## direnv hook
 eval "$(direnv hook zsh)"
-
-## autocompletion for various tools
-autoload -U bashcompinit && bashcompinit
-
-source <(kubectl completion zsh)
-source <(helm completion zsh)
-eval "$(logcli --completion-script-zsh | grep -v compinit)"
 
