@@ -8,3 +8,5 @@
 	prompt = false
 [diff]
 	tool = meld
+[delta]
+	line-numbers = true
