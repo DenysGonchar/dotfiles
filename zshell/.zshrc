@@ -24,10 +24,16 @@ zstyle ':completion:*' insert-tab false
 zstyle ':completion:*' matcher-list '' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}'
 
 ## key bindings
-bindkey "^[[5~" history-beginning-search-backward
-bindkey "^[[6~" history-beginning-search-forward
-bindkey "^[[H" beginning-of-line
-bindkey "^[[F" end-of-line
+bindkey "^[[5~" history-beginning-search-backward ## pg-up
+bindkey "^[[6~" history-beginning-search-forward  ## pg-down
+bindkey "^[[H" beginning-of-line                  ## home
+bindkey "^[[F" end-of-line                        ## end
+bindkey "^[[1;2D" backward-word                   ## shift-left
+bindkey "^[[1;2C" forward-word                    ## shift-right
+bindkey "^[[1;2A" up-line                         ## shift-up
+bindkey "^[[1;2B" down-line                       ## shift-down
+bindkey "^[[A" up-history                         ## up
+bindkey "^[[B" down-history                       ## down
 
 ## custom zshell options, use option names as in documentation:
 ##     https://zsh.sourceforge.io/Doc/Release/Options.html
