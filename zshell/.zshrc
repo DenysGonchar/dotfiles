@@ -35,6 +35,11 @@ bindkey "^[[1;2B" down-line                       ## shift-down
 bindkey "^[[A" up-history                         ## up
 bindkey "^[[B" down-history                       ## down
 
+## shift-tab for filename completion
+zle -C complete-file complete-word _generic
+zstyle ':completion:complete-file::::' completer _files
+bindkey '^[[Z' complete-file
+
 ## custom zshell options, use option names as in documentation:
 ##     https://zsh.sourceforge.io/Doc/Release/Options.html
 setopt HIST_IGNORE_SPACE
