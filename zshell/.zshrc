@@ -9,7 +9,8 @@ prompt+="%{$fg[green]%}\$(git branch 2> /dev/null | sed -ne 's/^*//p')"$'\n'
 prompt+="%{$fg[red]%}%n%{$reset_color%}@%{$fg[blue]%}%m%{$reset_color%} => "
 
 ## asdf-vm.com
-. /opt/homebrew/opt/asdf/libexec/asdf.sh
+export ASDF_DATA_DIR="${HOME}/.asdf"
+export PATH="${ASDF_DATA_DIR}/shims:${PATH}"
 
 ## autocompletion for various tools
 fpath+=("$(brew --prefix)/share/zsh/site-functions")
