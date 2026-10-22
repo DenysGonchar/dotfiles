@@ -1,12 +1,15 @@
 [user]
 	name = Denys Gonchar
-	email = denys.gonchar@erlang-solutions.com
+	email = ritchie.ua@gmail.com
+
 [core]
 	excludesfile = ~/.gitignore_global
 	pager = delta
-[difftool]
-	prompt = false
-[diff]
-	tool = meld
+
+[interactive]
+	diffFilter = delta --color-only
+
 [delta]
 	line-numbers = true
+	navigate = true
+	relative-paths = true
