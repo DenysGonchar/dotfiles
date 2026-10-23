@@ -8,9 +8,8 @@ prompt=$'\n'"%{$fg[cyan]%}%D{%d-%b-%y} %{$fg[magenta]%}%T %{$fg[yellow]%}%~"
 prompt+="%{$fg[green]%}\$(git branch 2> /dev/null | sed -ne 's/^*//p')"$'\n'
 prompt+="%{$fg[red]%}%n%{$reset_color%}@%{$fg[blue]%}%m%{$reset_color%} => "
 
-## asdf-vm.com
-export ASDF_DATA_DIR="${HOME}/.asdf"
-export PATH="${ASDF_DATA_DIR}/shims:${PATH}"
+## https://mise.jdx.dev/shell-setup.html
+eval "$(mise activate zsh)"
 
 ## autocompletion for various tools
 fpath+=("$(brew --prefix)/share/zsh/site-functions")
@@ -49,4 +48,3 @@ setopt AUTO_CD
 
 ## direnv hook
 eval "$(direnv hook zsh)"
-
